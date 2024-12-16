@@ -9,6 +9,14 @@ data class Coordinate(val x: Int, val y: Int) {
 
     fun adjacent(): Set<Coordinate> {
         return hashSetOf(
+            transpose(-1, 0),
+            transpose(0, -1),
+            transpose(0, 1),
+            transpose(1, 0))
+    }
+
+    fun adjacentWithDiagonals(): Set<Coordinate> {
+        return hashSetOf(
             transpose(-1, -1),
             transpose(-1, 0),
             transpose(-1, 1),
