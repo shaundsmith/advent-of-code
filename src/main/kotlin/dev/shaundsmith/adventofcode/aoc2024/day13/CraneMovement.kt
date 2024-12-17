@@ -1,10 +1,8 @@
 package dev.shaundsmith.adventofcode.aoc2024.day13
 
-import dev.shaundsmith.adventofcode.core.Coordinate
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlin.math.abs
 import kotlin.math.round
-import kotlin.math.roundToInt
 import kotlin.math.roundToLong
 
 class CraneMovement(
