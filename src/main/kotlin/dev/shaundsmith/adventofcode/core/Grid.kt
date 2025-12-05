@@ -72,6 +72,20 @@ class Grid<T>(val contents: Array<Array<T>>) {
         return coordinates
     }
 
+    fun findCoordinates(predicate: (T, Coordinate) -> Boolean): List<Coordinate> {
+        val coordinates = ArrayList<Coordinate>()
+        for (x in 0..<width()) {
+            for (y in 0..<height()) {
+                val coordinate = Coordinate(x, y)
+                if (predicate.invoke(get(coordinate), coordinate)) {
+                    coordinates.add(Coordinate(x, y))
+                }
+            }
+        }
+
+        return coordinates
+    }
+
     fun isValid(coordinate: Coordinate): Boolean {
 
         val isNegative = coordinate.x < 0 || coordinate.y < 0
